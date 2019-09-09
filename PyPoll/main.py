@@ -33,20 +33,20 @@ with open(csvpath, newline = "") as pypoll:
         else:
             Name_Candidate[row[2]] = 1
     
-    for key, value in Name_Candidate.items():
-        Percent_Candidate[key] = format((value/total_number_vote) * 100, ".3f")
+    for row[2], value in Name_Candidate.items():
+        Percent_Candidate[row[2]] = format((value/total_number_vote) * 100, ".3f")
 
-    for key in Name_Candidate.keys():
-        if Name_Candidate[key] > total_number_winner:
-            Winner = key
-            total_number_winner = Name_Candidate[key]
+    for row[2] in Name_Candidate.keys():
+        if Name_Candidate[row[2]] > total_number_winner:
+            Winner = row[2]
+            total_number_winner = Name_Candidate[row[2]]
 
     print("Election Results")
     print("------------------------------------")
     print(f"Total Votes: {total_number_vote}")
     print("------------------------------------")
-    for key, value in Name_Candidate.items():
-        print(f"{key}: {Percent_Candidate[key]}% ({str(value)})")
+    for row[2], value in Name_Candidate.items():
+        print(f"{row[2]}: {Percent_Candidate[row[2]]}% ({int(value)})")
     print("------------------------------------")
     print(f"Winner: {Winner}")
     print("------------------------------------")
@@ -59,8 +59,8 @@ with open("csvpath.text", "w", newline = "") as text:
     text.write("------------------------\n")
     text.write(f"Total Votes: {total_number_vote}\n")
     text.write("------------------------------------\n")
-    for key, value in Name_Candidate.items():
-        text.write(f"{key}: {Percent_Candidate[key]}% ({str(value)})\n")
+    for row[2], value in Name_Candidate.items():
+        text.write(f"{row[2]}: {Percent_Candidate[row[2]]}% ({int(value)})\n")
     text.write("------------------------------------\n")
     text.write(f"Winner: {Winner}\n")
     text.write("------------------------------------\n")
