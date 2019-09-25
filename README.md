@@ -1,7 +1,3 @@
-# python-challange
-
-#Pypoll
-
 # import os module
 import os
 
@@ -77,8 +73,6 @@ with open("csvpath.text", "w", newline = "") as text:
     text.write(f"Winner: {Winner}\n")
     text.write("------------------------------------\n")
 
-
-#Pybank
 # import os module
 import os
 
@@ -158,3 +152,4 @@ with open("csvpath.text", "w", newline = "") as text:
     text.write(f"Average Change: ${average_profit_loss}\n")
     text.write(f"Greatest Increase in Profits: {date_increase} (${greatest_in})\n")
     text.write(f"Greatest Decrease in Profits: {date_decrease} (${greatest_de})\n")
+
